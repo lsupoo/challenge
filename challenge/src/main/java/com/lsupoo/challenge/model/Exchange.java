@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -13,7 +14,10 @@ import javax.persistence.*;
 @Entity
 @AllArgsConstructor
 @Table(name = "exchange_rate")
-public class Exchange {
+public class Exchange implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     @Id
     @Column(name= "symbol")
     private String symbol;
